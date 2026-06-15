@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, jsonify
 from google import genai
 
 app = Flask(__name__)
-
+import os
 client = genai.Client(
-    api_key="YOUR_API_KEY"
+    api_key=os.environ.get("GEMINI_API_KEY")
     )
 
 chat_history = []
